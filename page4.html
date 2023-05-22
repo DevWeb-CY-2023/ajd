@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title> pages </title>
+    <link rel="stylesheet" type="text/css" href="stylepage4.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- Page 4 -->
+    <div class="page4">
+        <!-- En-tête de la page -->
+        <div class="bande">
+            <div class="m_header">
+                <img src="LOGOS_JEUNES.svg" alt="Your Image">
+                <h2> JEUNE </h2>
+                <h3> Je donne de la valeur à mon engagement </h3>
+            </div>
+
+            <!-- Bande de couleur avec des boutons -->
+            <!-- ajouter la classe m_jc-center pour centrer le contenu -->
+            <div class="m_buttons m_flex-parent">
+                <a href="#m__" style="color:pink" rel="noreferrer"> JEUNE </a>
+                <a href="#m__" style="color:rgb(56,151,4)" rel="noreferrer"> RÉFÉRENT </a>
+                <a href="#m__" style="color:rgb(51,25,249)" rel="noreferrer"> CONSULTANT </a>
+                <a href="#m__" style="color:rgb(147,142,143)" rel="noreferrer"> PARTENAIRES </a>
+            </div>
+        </div>
+
+        <!-- Contenu principal de la page -->
+
+        <div class="header">
+            <h1>Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
+        </div>
+        <form>
+            <div class="form-container1">
+
+                <div class="form-row1">
+                    <label for="nom">NOM :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div> <br>
+                <div class="form-row">
+                    <label for="prenom">PRÉNOM :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div> <br>
+                <div class="form-row">
+                    <label for="anniv">DATE DE NAISSANCE:</label>
+                    <input type="date" id="anniv" name="birthday">
+                </div> <br>
+                <div class="form-row">
+                    <label for="email">ADRESSE MAIL :</label>
+                    <input type="email" id="email" name="email" required>
+                </div> <br>
+                <div class="form-row">
+                    <label for="reseauSocial">RÉSEAU SOCIAL :</label>
+                    <input type="text" id="reseauSocial" name="reseauSocial" required>
+                </div> <br>
+                <div class="form-row">
+                    <label for="centreInteret">CENTRES D'INTERÊT :</label>
+                    <input type="text" id="centreInteret" name="centreInteret" required>
+                </div> <br>
+                <div class="form-row">
+                    <label for="engagement">MON ENGAGEMENT :</label>
+                    <textarea id="engagement" name="engagement" required></textarea>
+                </div> <br>
+                <div class="form-row">
+                    <label for="duree">DURÉE :</label>
+                    <input type="text" id="duree" name="duree" required>
+                </div> <br>
+            </div>
+
+            <!-- 2e formulaire -->
+            <form>
+                <div class="form-container2">
+                    <div class="form-row2">
+                        <h3>MES SAVOIRS-ÊTRES : <br> Je suis*</h3> <br>
+                        <div>
+                            <input type="checkbox" id="autonome" name="choix" value="autonome">
+                            <label for="autonome">Autonome</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="capable" name="choix" value="capable">
+                            <label for="capable">Capable d’analyse et de synthèse</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ecoute" name="choix" value="ecoute">
+                            <label for="ecoute">À l'écoute</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="passionne" name="choix" value="passionne">
+                            <label for="passionne">Passionné(e)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="fiable" name="choix" value="fiable">
+                            <label for="fiable">Fiable</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="patient" name="choix" value="patient">
+                            <label for="patient">Patient(e)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="reflechi" name="choix" value="reflechi">
+                            <label for="reflechi">Réfléchi(e)</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="responsable" name="choix" value="responsable">
+                            <label for="responsable">Responsable</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="sociable" name="choix" value="sociable">
+                            <label for="sociable">Sociable</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="optimiste" name="choix" value="optimiste">
+                            <label for="optimiste">Optimiste</label>
+                        </div>
+                    </div>
+                    <p> *Faire 4 choix au maximum </p>
+                    <div class="form-row3">
+                        <button id="valider" type="submit" onsubmit="valider()">Valider</button>
+                    </div>
+                </div>
+            </form>
