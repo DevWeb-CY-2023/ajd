@@ -36,6 +36,8 @@
 /* Style pour le logo */
 .logo img {
   margin-bottom: 30px;
+  height: 400px;
+  width: 400px;
 }
 
 /* Style pour le texte de présentation */

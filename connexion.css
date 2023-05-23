@@ -17,10 +17,9 @@
       .m_header img {
         object-fit: contain;
         flex-shrink: 1;
-        margin-top: 5px;
         margin-left: 5px;
-        margin-bottom: 5px;
-        height: auto;
+        height: 180px;
+        width: 180px;
       }
       
       /* Style du titre de l'en-tête */
