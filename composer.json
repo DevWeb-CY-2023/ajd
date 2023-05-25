@@ -1,0 +1,7 @@
+{
+    "name": "ludmila/dev-web",
+    "description": "générer un pdf à partir d'un formulaire HTML",
+    "require": {
+        "spipu/html2pdf": "^5.2.7"
+    }
+}

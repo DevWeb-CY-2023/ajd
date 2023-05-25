@@ -35,7 +35,8 @@
         <div class="header">
             <h1>Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
         </div>
-        <form action="creationjeune.php" method="POST">
+        <form id="cvForm" action="pdf.php" method="POST">
+
             <div class="form-container1">
 
                 <div class="form-row1">
@@ -123,11 +124,14 @@
                         </div>
                     </div>
                     <p> *Faire 4 choix au maximum </p>
-                    <div class="connexion">
-                        <a href="connexion.html" p> J'ai déjà un compte : je me connecte !</p> </a>
+                    <div>
+                        <a href="#" onclick="genererPDF()">Je génère mon CV en PDF</a>
                     </div>
                     <div class="form-row3">
                         <button id="valider" type="submit" onsubmit="valider()">Valider</button>
                     </div>
                 </div>
             </form>
+</body>
+
+</html>
