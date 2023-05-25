@@ -88,51 +88,18 @@
         padding: 20px;
       }
 
-      
-     /* Positionnement du form-container1 à gauche */
-.form-container1 {
-    width: 40%;
-    margin-left: 60px;
-    border: 4px solid rgb(56,151,4);
-    padding: 20px;
-    position: absolute;
-    left: 0; /* Alignement à gauche de la page */
-  }
-  
-  /* Positionnement du form-container2 à droite */
-  .form-container2 {
-    width: 40%;
-    margin-right: 60px;
-    border: 4px solid rgb(56,151,4);
-    padding: 20px;
-    position: absolute;
-    right: 0; /* Alignement à droite de la page */
-  }
-
-
-  .comments h3 {
-    text-align: center;
-    color: #fff;
-    background: linear-gradient(to right, rgb(136, 222, 89), rgb(56, 151, 4));
-    margin: 0;
-    padding: 10px;
-  }
-  
-  .form-container2 h3 {
-    background: linear-gradient(to right,rgb(136, 222, 89) , rgb(56,151,4));
-    margin: 0px;
-    color: #fff;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .form-container2 p {
-    font-size: 15px;
-  }
-
-  .form-row3 button {
-    border: 2px solidrgb(56,151,4);
-    background-color:rgb(136, 222, 89);
-    color: #000000;
-    text-align: center;
-  }
+      .form-container1 {
+        width: 40%;
+        border: 4px solid rgb(56, 151, 4);
+        padding: 20px;
+        float: left;
+    }
+    
+    .form-container2 {
+        width: 40%;
+        border: 4px solid rgb(56, 151, 4);
+        padding: 20px;
+        float: right;
+        color: green;
+    }
+    

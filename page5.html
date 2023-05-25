@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-
 <head>
     <meta charset="UTF-8">
-    <title> pages </title>
+    <title>pages</title>
     <link rel="stylesheet" type="text/css" href="stylepage5.css">
     <script src="script.js"></script>
 </head>
 
 <body>
     <!-- Page 5 -->
-    <div class="page4">
+    <div class="page5">
         <!-- En-tête de la page -->
         <div class="bande">
             <div class="m_header">
-                <a href="page4.html"> <img src="LOGOS_JEUNES.svg" alt="Your Image"> </a>
-                <h2> RÉFÉRENT </h2>
-                <h3> Je confirme la valeur de ton engagement </h3>
+                <img src="LOGOS_JEUNES.svg" alt="Your Image">
+                <h2>RÉFÉRENT</h2>
+                <h3>Je confirme la valeur de ton engagement</h3>
             </div>
 
             <!-- Bande de couleur avec des boutons -->
             <!-- ajouter la classe m_jc-center pour centrer le contenu -->
             <div class="m_buttons m_flex-parent">
-                <a href="page4.html" style="color:pink" rel="noreferrer"> JEUNE </a>
-                <a href="page5.html" style="color:rgb(56,151,4)" rel="noreferrer"> RÉFÉRENT </a>
-                <a href="#m__" style="color:rgb(51,25,249)" rel="noreferrer"> CONSULTANT </a>
-                <a href="page6.html" style="color:rgb(147,142,143)" rel="noreferrer"> PARTENAIRES </a>
+                <a href="page4.html" style="color:pink" rel="noreferrer">JEUNE</a>
+                <a href="page5.html" style="color:rgb(56,151,4)" rel="noreferrer">RÉFÉRENT</a>
+                <a href="#m__" style="color:rgb(51,25,249)" rel="noreferrer">CONSULTANT</a>
+                <a href="page6.html" style="color:rgb(147,142,143)" rel="noreferrer">PARTENAIRES</a>
             </div>
         </div>
 
         <!-- Contenu principal de la page -->
-
         <div class="header">
-            <h1>Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune.</h1>
+            <h1>J'ajoute un ou des référent(s).</h1>
         </div>
-        <form>
+        <form id="referentForm">
             <div class="form-container1">
-
                 <div class="form-row1">
                     <label for="nom">NOM :</label>
                     <input type="text" id="nom" name="nom" required>
@@ -47,28 +44,60 @@
                     <input type="text" id="prenom" name="prenom" required>
                 </div> <br>
                 <div class="form-row">
-                    <label for="anniv">DATE DE NAISSANCE:</label>
-                    <input type="date" id="anniv" name="birthday">
-                </div> <br>
-                <div class="form-row">
                     <label for="email">ADRESSE MAIL :</label>
                     <input type="email" id="email" name="email" required>
-                </div> <br>
-                <div class="form-row">
-                    <label for="reseauSocial">RÉSEAU SOCIAL :</label>
-                    <input type="text" id="reseauSocial" name="reseauSocial" required>
                 </div> <br>
                 <div class="form-row">
                     <label for="engagement">PRÉSENTATION :</label>
                     <input type="text" id="presentation" name="presentation" required>
                 </div> <br>
-                <div class="form-row">
-                    <label for="duree">DURÉE :</label>
-                    <input type="text" id="duree" name="duree" required>
-                </div> <br>
+                <div class="ajout">
+                    <button type="button" id="ajouterReferent">Ajouter un référent</button>
+                </div>
             </div>
 
-            <!-- 2e formulaire -->
+        </form>
+
+        <div id="referentsContainer" class="form-container2">
+            <!-- Les référents seront ajoutés ici -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("ajouterReferent").addEventListener("click", function () {
+            var form = document.getElementById("referentForm");
+
+            var nomInput = form.elements["nom"].value;
+            var prenomInput = form.elements["prenom"].value;
+            var emailInput = form.elements["email"].value;
+            var presentationInput = form.elements["presentation"].value;
+
+            var referentContainer = document.createElement("div");
+            referentContainer.className = "referent-container";
+
+            var referentInfo = document.createElement("p");
+            referentInfo.innerHTML =
+                "NOM : " + nomInput + "<br>" +
+                "PRÉNOM : " + prenomInput + "<br>" +
+                "ADRESSE MAIL : " + emailInput + "<br>" +
+                "PRÉSENTATION : " + presentationInput;
+
+            referentContainer.appendChild(referentInfo);
+
+            var referentsContainer = document.getElementById("referentsContainer");
+            referentsContainer.appendChild(referentContainer);
+
+            // Réinitialiser les champs du formulaire
+            form.reset();
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- 2e formulaire 
             <form>
                 <div class="form-container2">
                     <div class="form-row2">
@@ -116,5 +145,5 @@
                     <div class="form-row3">
                         <button id="valider" type="submit">Valider</button>
                     </div>
-                </div>
-            </form>
+                </div> -->
+</form>
