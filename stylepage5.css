@@ -13,6 +13,13 @@
         max-height: 20vh;
       }
       
+      /* Aligne le texte de l'en tete verticalemnt */
+      .text {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+      }
+      
       /* Style de l'image dans l'en-tête */
       .m_header img {
           object-fit: contain;
@@ -28,8 +35,7 @@
         align-self: flex-end;
         padding: 0;
         text-align: right;
-        margin-left: auto;
-        margin-right: 15px;
+        margin: 15px 15px auto auto;
         color: rgb(56,151,4);
       }
 
@@ -38,8 +44,7 @@
         align-self: flex-end;
         padding: 0;
         text-align: right;
-        margin-left: auto;
-        margin-right: 15px;
+        margin: 15px 15px auto auto;
         color: #000000;
       }
       
