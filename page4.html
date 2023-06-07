@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title> pages </title>
     <link rel="stylesheet" type="text/css" href="stylepage4.css">
-    <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -17,8 +17,8 @@
             <div class="m_header">
                 <a href="page4.html"> <img src="LOGOS_JEUNES.svg" alt="Your Image"> </a>
                 <div class="text">
-                	<h2> JEUNE </h2>
-                	<h3> Je donne de la valeur à mon engagement </h3>
+                    <h2> JEUNE </h2>
+                    <h3> Je donne de la valeur à mon engagement </h3>
                 </div>
             </div>
 
@@ -78,9 +78,10 @@
                         <td><label for="duree">DURÉE :</label></td>
                         <td><input type="text" id="duree" name="duree" required></td>
                     </tr>
-                    <div>
-                        <a href="page5.html"> J'ajoute des référents. </a> <br>
-                    </div>
+                    <tr>
+                        <a href="page5.html"> J'ajoute des références. </a>
+                    </tr>
+
                 </table>
             </div>
         </form>
@@ -91,43 +92,53 @@
                 <div class="form-row2">
                     <h3>MES SAVOIRS-ÊTRES : <br> Je suis*</h3> <br>
                     <div>
-                        <input type="checkbox" id="autonome" name="choix1" value="autonome">
+                        <input type="checkbox" id="autonome" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix1" value="autonome">
                         <label for="autonome">Autonome</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="capable" name="choix2" value="capable">
+                        <input type="checkbox" id="capable" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix2" value="capable">
                         <label for="capable">Capable d’analyse et de synthèse</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="ecoute" name="choix3" value="ecoute">
+                        <input type="checkbox" id="ecoute" class="checkbox-savoir-etre" onchange="limiteSelection(this)"
+                            name="choix3" value="ecoute">
                         <label for="ecoute">À l'écoute</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="passionne" name="choix4" value="passionne">
+                        <input type="checkbox" id="passionne" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix4" value="passionne">
                         <label for="passionne">Passionné(e)</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="fiable" name="choix5" value="fiable">
+                        <input type="checkbox" id="fiable" class="checkbox-savoir-etre" onchange="limiteSelection(this)"
+                            name="choix5" value="fiable">
                         <label for="fiable">Fiable</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="patient" name="choix6" value="patient">
+                        <input type="checkbox" id="patient" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix6" value="patient">
                         <label for="patient">Patient(e)</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="reflechi" name="choix7" value="reflechi">
+                        <input type="checkbox" id="reflechi" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix7" value="reflechi">
                         <label for="reflechi">Réfléchi(e)</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="responsable" name="choix8" value="responsable">
+                        <input type="checkbox" id="responsable" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix8" value="responsable">
                         <label for="responsable">Responsable</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="sociable" name="choix9" value="sociable">
+                        <input type="checkbox" id="sociable" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix9" value="sociable">
                         <label for="sociable">Sociable</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="optimiste" name="choix10" value="optimiste">
+                        <input type="checkbox" id="optimiste" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix10" value="optimiste">
                         <label for="optimiste">Optimiste</label>
                     </div>
                 </div>
@@ -138,9 +149,9 @@
                 <div class="form-row3">
                     <button id="valider" type="submit" onsubmit="valider()">Valider</button>
                 </div>
-             </div>
+            </div>
         </form>
-    </div>
+        <script src="script.js"></script>
 </body>
 
 </html>
