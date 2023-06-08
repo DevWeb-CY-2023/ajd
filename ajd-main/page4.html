@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title> pages </title>
+    <link rel="stylesheet" type="text/css" href="stylepage4.css">
+
+</head>
+
+<body>
+    <!-- Page 4 -->
+    <div class="page4">
+        <!-- En-tête de la page -->
+        <div class="bande">
+            <div class="m_header">
+                <a href="page4.html"> <img src="LOGOS_JEUNES.svg" alt="Your Image"> </a>
+                <div class="text">
+                    <h2> JEUNE </h2>
+                    <h3> Je donne de la valeur à mon engagement </h3>
+                </div>
+            </div>
+
+            <!-- Bande de couleur avec des boutons -->
+            <!-- ajouter la classe m_jc-center pour centrer le contenu -->
+            <div class="m_buttons m_flex-parent">
+                <a href="page3.html" style="color:pink" rel="noreferrer"> JEUNE </a>
+                <a href="page6.html" style="color:rgb(147,142,143)" rel="noreferrer"> PARTENAIRES </a>
+            </div>
+        </div>
+
+        <!-- Contenu principal de la page -->
+
+        <div class="header">
+            <h1>Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
+        </div>
+        <form id="cvForm" action="creationjeune.php" method="POST">
+
+            <div class="form-container1">
+
+                <table>
+                    <tr>
+                        <td><label for="nom">NOM :</label></td>
+                        <td><input type="text" id="nom" name="nom" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="prenom">PRÉNOM :</label></td>
+                        <td><input type="text" id="prenom" name="prenom" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mdp">MOT DE PASSE :</label></td>
+                        <td><input type="password" id="mdp" name="mdp" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="anniv">DATE DE NAISSANCE:</label></td>
+                        <td><input type="date" id="anniv" name="birthday"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">ADRESSE MAIL :</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="reseauSocial">RÉSEAU SOCIAL :</label></td>
+                        <td><input type="text" id="reseauSocial" name="reseauSocial" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="centreInteret">CENTRES D'INTERÊT :</label></td>
+                        <td><input type="text" id="centreInteret" name="centreInteret" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="engagement">MON ENGAGEMENT :</label></td>
+                        <td><input type="text" id="engagement" name="engagement" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="duree">DURÉE :</label></td>
+                        <td><input type="text" id="duree" name="duree" required></td>
+                    </tr>
+
+
+                </table>
+            </div>
+
+
+            <!-- 2e formulaire -->
+            <div class="form-container2">
+                <div class="form-row2">
+                    <h3>MES SAVOIRS-ÊTRES : <br> Je suis*</h3> <br>
+                    <div>
+                        <input type="checkbox" id="autonome" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix1" value="autonome">
+                        <label for="autonome">Autonome</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="capable" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix2" value="capable">
+                        <label for="capable">Capable d’analyse et de synthèse</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ecoute" class="checkbox-savoir-etre" onchange="limiteSelection(this)"
+                            name="choix3" value="ecoute">
+                        <label for="ecoute">À l'écoute</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="passionne" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix4" value="passionne">
+                        <label for="passionne">Passionné(e)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="fiable" class="checkbox-savoir-etre" onchange="limiteSelection(this)"
+                            name="choix5" value="fiable">
+                        <label for="fiable">Fiable</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="patient" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix6" value="patient">
+                        <label for="patient">Patient(e)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="reflechi" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix7" value="reflechi">
+                        <label for="reflechi">Réfléchi(e)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="responsable" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix8" value="responsable">
+                        <label for="responsable">Responsable</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sociable" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix9" value="sociable">
+                        <label for="sociable">Sociable</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="optimiste" class="checkbox-savoir-etre"
+                            onchange="limiteSelection(this)" name="choix10" value="optimiste">
+                        <label for="optimiste">Optimiste</label>
+                    </div>
+                </div>
+                <p> *Faire 4 choix au maximum </p>
+                <div>
+                    <div class="form-row3">
+                        <button id="valider" type="submit" onsubmit="valider()">Valider</button>
+                    </div>
+                </div>
+        </form>
+        <script src="script.js"></script>
+</body>
+
+</html>
