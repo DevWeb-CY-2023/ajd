@@ -10,8 +10,8 @@ $fp = fopen('dataReferent.csv', 'a');
 fputcsv($fp, $data);
 fclose($fp);
 
-    // Redirection vers referent.html
-    header("Location: referent.html");
+    // Redirection vers ref.html
+    header("Location: ref.html");
     exit();
 
 ?>
