@@ -1,4 +1,4 @@
-/* Style pour la page de connexion */
+ /* Style pour la page de connexion */
     /* Réinitialisation de la marge et du padding pour le body */
     body {
         margin: 0;
@@ -17,10 +17,9 @@
       .m_header img {
         object-fit: contain;
         flex-shrink: 1;
-        margin-top: 5px;
         margin-left: 5px;
-        margin-bottom: 5px;
-        height: auto;
+        height: 180px;
+        width: 180px;
       }
       
       /* Style du titre de l'en-tête */
@@ -62,45 +61,46 @@
         text-decoration: none;
         background-color: #bdbdbd;
       }
-      
-      /* Style des boutons avec marges droites */
-      button.m_margin-right {
-        margin-right: 50px;
-      }
-      
-      /* Style des liens dans les boutons lorsqu'ils sont survolés */
-      .m_buttons a:hover {
-        background-color: #fdf0b5;
-      }
-      
-      .titre h1 {
-        text-align: center;
-        color: rgb(51,25,249);
-      }
-      
-      .form-container {
-        text-align: center;
-      }
-      
-      .form-row {
-        margin-bottom: 10px;
-      }
-      
-      .form-row label {
-        display: block;
-      }
-      
-      .seconnecter {
-        text-align: center;
-      }
-      
-      .seconnecter button {
-        border: 2px solid rgb(25, 10, 133);
-        background-color: rgb(51,25,249) ;
-        color: #ffffff;
-        text-align: center;
-      }
-      
-      .inscription {
-        text-align: center;
-      }
+ 
+ 
+ /* Style des boutons avec marges droites */
+ button.m_margin-right {
+    margin-right: 50px;
+  }
+  
+  /* Style des liens dans les boutons lorsqu'ils sont survolés */
+  .m_buttons a:hover {
+    background-color: #fdf0b5;
+  }
+  
+  .titre h1 {
+    text-align: center;
+    color: rgb(56,151,4);
+  }
+  
+  .form-container {
+    text-align: center;
+  }
+  
+  .form-row {
+    margin-bottom: 10px;
+  }
+  
+  .form-row label {
+    display: block;
+  }
+  
+  .seconnecter {
+    text-align: center;
+  }
+  
+  .seconnecter button {
+    border: 2px solid rgb(32, 91, 0);
+    background-color: rgb(56,151,4) ;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .inscription {
+    text-align: center;
+  }

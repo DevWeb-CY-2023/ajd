@@ -15,12 +15,12 @@
       
       /* Style de l'image dans l'en-tête */
       .m_header img {
-          object-fit: contain;
-          flex-shrink: 1;
-          margin-left: 5px;
-          height: 180px;
-          width: 180px;
-        }
+        object-fit: contain;
+        flex-shrink: 1;
+        margin-left: 5px;
+        height: 180px;
+        width: 180px;
+      }
       
       /* Style du titre de l'en-tête */
       .m_header h2 {

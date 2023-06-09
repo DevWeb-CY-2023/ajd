@@ -5,30 +5,30 @@
 <head>
     <meta charset="UTF-8">
     <title> pages </title>
-    <link rel="stylesheet" type="text/css" href="connexion.css">
+    <link rel="stylesheet" type="text/css" href="connexion_consult.css">
 </head>
 
 <body>
     <!-- Page de connexion si un compte a été créé -->
-    <div class="connexion">
+    <div class="connexion_consult">
         <!-- En-tête de la page -->
         <div class="bande">
             <div class="m_header">
-                <a href="page3.html"> <img src="LOGOS_JEUNES.svg" alt="Your Image"> </a>
+                <a href="main.html"> <img src="LOGOS_JEUNES.svg" alt="Your Image"> </a>
                 <h2>Pour faire de l'engagement une valeur</h2>
             </div>
 
             <!-- Bande de couleur avec des boutons -->
             <!-- ajouter la classe m_jc-center pour centrer le contenu -->
             <div class="m_buttons m_flex-parent">
-                <a href="page4.html" style="color:pink" rel="noreferrer"> JEUNE </a>
-                <a href="page5.html" style="color:rgb(56,151,4)" rel="noreferrer"> RÉFÉRENT </a>
-                <a href="#m__" style="color:rgb(51,25,249)" rel="noreferrer"> CONSULTANT </a>
-                <a href="page6.html" style="color:rgb(147,142,143)" rel="noreferrer"> PARTENAIRES </a>
+                <a href="connexion_jeune.html" style="color:pink" rel="noreferrer"> JEUNE </a>
+                <a href="connexion_ref.html" style="color:rgb(56,151,4)" rel="noreferrer"> RÉFÉRENT </a>
+                <a href="connexion_consult.html" style="color:rgb(51,25,249)" rel="noreferrer"> CONSULTANT </a>
+                <a href="partenaires.html" style="color:rgb(147,142,143)" rel="noreferrer"> PARTENAIRES </a>
             </div>
         </div>
         <div class="titre">
-            <h1> Connexion : Jeune </h1>
+            <h1> Connexion : Consultant </h1>
         </div>
         <form>
             <div class="form-container">
@@ -38,13 +38,14 @@
                 </div> <br>
                 <div class="form-row">
                     <label for="mdp">Entrez votre mot de passe :</label>
-                    <input type="password" id="mdp" name="mdp" required>
+                    <input type="text" id="mdp" name="mdp" required>
                 </div> <br>
                 <div class="seconnecter">
                     <button type="submit">Se connecter</button>
                 </div> <br>
             </div>
             <div class="inscription">
-                <a href="page4.html" p> Je n'ai pas encore un compte : je m'en crée un !</p> </a>
+                <p> Je n'ai pas encore un compte :</p>
+                <a href="#m__">Je m'en créer un ! </a>
             </div>
         </form>
