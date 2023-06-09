@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>pages</title>
+    <link rel="stylesheet" type="text/css" href="stylereferent.css">
+</head>
+
+<body>
+    <!-- Page références -->
+    <div class="referent">
+        <!-- En-tête de la page -->
+        <div class="bande">
+            <div class="m_header">
+                <img src="LOGOS_JEUNES.svg" alt="Your Image">
+                <div class="text">
+                    <h2>RÉFÉRENT</h2>
+                    <h3>J'ajoute des référents pour confirmer la valeur de mon engagement</h3>
+                </div>
+            </div>
+
+            <!-- Bande de couleur avec des boutons -->
+            <!-- ajouter la classe m_jc-center pour centrer le contenu -->
+            <div class="m_buttons m_flex-parent">
+                <a href="accueiljeune.php" style="color:pink" rel="noreferrer">JEUNE</a>
+                <a href="#" style="color:rgb(56,151,4)" rel="noreferrer">RÉFÉRENT</a>
+                <a href="page6.html" style="color:rgb(147,142,143)" rel="noreferrer">PARTENAIRES</a>
+            </div>
+        </div>
+
+        <!-- Contenu principal de la page -->
+        <div class="header">
+            <h1>J'ajoute un ou des référent(s).</h1>
+        </div>
+        <form id="referentForm" action="referent.php" method="post">
+            <div class="form-container1">
+                <table>
+                    <tr>
+                        <td><label for="nom">NOM :</label></td>
+                        <td><input type="text" id="nom" name="nom" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="prenom">PRÉNOM :</label></td>
+                        <td><input type="text" id="prenom" name="prenom" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">ADRESSE MAIL :</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="presentation">PRÉSENTATION :</label></td>
+                        <td><input type="text" id="presentation" name="presentation" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Enregistrer"></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+
+        <div id="referentsContainer" class="form-container2">
+            <!-- Les référents seront ajoutés ici -->
+        </div>
+    </div>
+
+    <script>
+        var jeuneId = ""; // Variable pour stocker l'ID du jeune
+
+        // Récupérer l'ID du jeune à partir du fichier dataJeune.csv
+        var xhrJeune = new XMLHttpRequest();
+        xhrJeune.open("GET", "getjeuneid.php", true);
+        xhrJeune.onreadystatechange = function () {
+            if (xhrJeune.readyState === 4 && xhrJeune.status === 200) {
+                jeuneId = xhrJeune.responseText;
+                getReferents();
+            }
+        };
+        xhrJeune.send();
+
+        function getReferents() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "getreferents.php?id=" + encodeURIComponent(jeuneId), true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var referents = JSON.parse(xhr.responseText);
+                    displayReferents(referents);
+                }
+            };
+            xhr.send();
+        }
+
+        function displayReferents(referents) {
+            var referentsContainer = document.getElementById("referentsContainer");
+            referentsContainer.innerHTML = "";
+
+            for (var i = 0; i < referents.length; i++) {
+                var referent = referents[i];
+
+                var referentContainer = document.createElement("div");
+                referentContainer.className = "referent-container";
+
+                var referentInfo = document.createElement("p");
+                referentInfo.innerHTML =
+                    "NOM : " + referent.nom + "<br>" +
+                    "PRÉNOM : " + referent.prenom + "<br>" +
+                    "ADRESSE MAIL : " + referent.email + "<br>" +
+                    "PRÉSENTATION : " + referent.presentation;
+
+                referentContainer.appendChild(referentInfo);
+                referentsContainer.appendChild(referentContainer);
+            }
+        }
+
+        document.getElementById("referentForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var form = document.getElementById("referentForm");
+
+            var nomInput = form.elements["nom"].value;
+            var prenomInput = form.elements["prenom"].value;
+            var emailInput = form.elements["email"].value;
+            var presentationInput = form.elements["presentation"].value;
+
+            var referentContainer = document.createElement("div");
+            referentContainer.className = "referent-container";
+
+            var referentInfo = document.createElement("p");
+            referentInfo.innerHTML =
+                "NOM : " + nomInput + "<br>" +
+                "PRÉNOM : " + prenomInput + "<br>" +
+                "ADRESSE MAIL : " + emailInput + "<br>" +
+                "PRÉSENTATION : " + presentationInput;
+
+            referentContainer.appendChild(referentInfo);
+
+            var referentsContainer = document.getElementById("referentsContainer");
+            referentsContainer.appendChild(referentContainer);
+
+            // Envoyer les données du formulaire à referent.php via AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "referent.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Le formulaire a été soumis avec succès
+                    // Vous pouvez ajouter ici une logique de confirmation ou rediriger l'utilisateur vers une autre page
+
+                    // Envoi de l'e-mail automatiquement
+                    var mailXHR = new XMLHttpRequest();
+                    mailXHR.open("GET", "mailreferent.php", true);
+                    mailXHR.onreadystatechange = function () {
+                        if (mailXHR.readyState === 4 && mailXHR.status === 200) {
+                            // L'e-mail a été envoyé avec succès
+                        }
+                    };
+                    mailXHR.send();
+                }
+            };
+            xhr.send("id=" + encodeURIComponent(jeuneId) +
+                "&nom=" + encodeURIComponent(nomInput) +
+                "&prenom=" + encodeURIComponent(prenomInput) +
+                "&email=" + encodeURIComponent(emailInput) +
+                "&presentation=" + encodeURIComponent(presentationInput));
+
+            // Réinitialiser les champs du formulaire
+            form.reset();
+        });
+    </script>
+
+    <form action="logout.php" method="POST">
+        <input type="submit" value="Se déconnecter">
+    </form>
+
+</body>
+
+</html>
