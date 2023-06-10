@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         $mail->isHTML(true);
         $mail->Subject = 'Confirmation de reference';
-        $mail->Body = $nomJeune . ' ' . $prenomJeune . ' souhaite vous ajouter comme référent. Si oui, veuillez vous diriger vers la page confirmationreference.php pour confirmer.';
+        $mail->Body = $nomJeune . ' ' . $prenomJeune . ' souhaite vous ajouter comme référent.';
 
         $mail->send();
     } catch (Exception $e) {
