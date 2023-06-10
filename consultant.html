@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title> pages </title>
+    <link rel="stylesheet" type="text/css" href="styleconsultant.css">
+</head>
+
+<body>
+
+    <div class="consultant">
+        <!-- En-tête de la page -->
+        <div class="bande">
+            <div class="m_header">
+                <img src="LOGOS_JEUNES.svg" alt="Your Image"> </a>
+                <div class="text">
+                    <h2> JEUNE </h2>
+                    <h3> Je donne de la valeur à mon engagement </h3>
+                </div>
+            </div>
+
+            <!-- Bande de couleur avec des boutons -->
+            <div class="m_buttons m_flex-parent">
+                <a href="page3.html" style="color:pink" rel="noreferrer"> JEUNE </a>
+                <a href="page6.html" style="color:rgb(147,142,143)" rel="noreferrer"> PARTENAIRES </a>
+            </div>
+        </div>
+
+        <!-- Contenu principal de la page -->
+
+        <div class="header">
+            <h1>Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
+        </div>
+        <form id="consultantForm" action="consultant.php" method="POST">
+            <div class="form-container1">
+                <table>
+                    <tr>
+                        <td><label for="nom">NOM :</label></td>
+                        <td><input type="text" id="nom" name="nom" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="prenom">PRÉNOM :</label></td>
+                        <td><input type="text" id="prenom" name="prenom" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">ADRESSE MAIL :</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <!-- <td><input type="hidden" id="jeune_id" name="jeune_id" value="<?php echo $_SESSION['id']; ?>"></td> -->
+                        <td><input type="submit" value="Enregistrer"></td>
+                    </tr>
+                </table>
+        </form>
+        <br>
+        <form action="logout.php" method="POST">
+            <input type="submit" value="Se déconnecter">
+        </form>
+    </div>
+    <script>
+        document.getElementById('consultantForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Empêche la soumission normale du formulaire
+            var form = this;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", form.action, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+
+
+                    // Envoi de l'e-mail au référent
+                    var mailRequest = new XMLHttpRequest();
+                    mailRequest.open("GET", "mailconsultant.php", true);
+                    mailRequest.onreadystatechange = function () {
+                        if (mailRequest.readyState === 4 && mailRequest.status === 200) {
+                            // L'e-mail a été envoyé avec succès
+                            window.location.href = "accueiljeune.php"; // Rediriger vers accueiljeune.php
+                        }
+                    };
+                    mailRequest.send();
+                }
+            };
+
+            // Créer les données à envoyer en incluant les valeurs des champs nom, prénom, email
+            var formData = new FormData(form);
+            var serializedData = Array.from(formData).map(function (pair) {
+                return encodeURIComponent(pair[0]) + "=" + encodeURIComponent(pair[1]);
+            }).join("&");
+
+            xhr.send(serializedData);
+
+            // Réinitialiser les champs du formulaire
+            form.reset();
+        });
+
+    </script>
+</body>
+
+</html>

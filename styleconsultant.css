@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Définition du style de l'en-tête */
+  .m_header {
+    display: flex;
+    background-color: #efefef;
+    height: 20vh;
+    max-height: 20vh;
+  }
+
+  /* Aligne le texte de l'en tete verticalemnt */
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+
+  /* Style de l'image dans l'en-tête */
+  .m_header img {
+    object-fit: contain;
+    flex-shrink: 1;
+    margin-left: 5px;
+    height: 180px;
+    width: 180px;
+  }
+
+  /* Style du titre de l'en-tête */
+  .m_header h2 {
+    font-size: 60px;
+    align-self: flex-end;
+    padding: 0;
+    text-align: right;
+    margin: 15px 15px auto auto;
+    color: #ffc0cb;
+  }
+
+  .m_header h3 {
+    font-size: 30px;
+    align-self: flex-end;
+    padding: 0;
+    text-align: right;
+    margin: 15px 15px auto auto;
+    color: #000000;
+  }
+
+  /* bande */
+  .m_bande {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Style des boutons dans la bande de couleur */
+  .m_buttons {
+    max-width: fit-content;
+    background-color: #efefef;
+    max-height: fit-content;
+    align-self: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
+  /* Style des liens dans les boutons */
+  .m_buttons a {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #bdbdbd;
+  }
+
+  /* Style des boutons avec marges droites */
+  button.m_margin-right {
+   margin-right: 50px;
+  }
+  
+  /* Style des liens dans les boutons lorsqu'ils sont survolés */
+  m_buttons a:hover {
+    background-color: #fdf0b5;
+  }
+
+  .header {
+    text-align: center;
+    color: #f47a8f;
+    padding: 20px;
+  }
+
+  /* Positionnement du form-container1 à gauche */
+  .form-container1 {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 4px solid grey;
+  }
