@@ -1,29 +1,38 @@
 <?php
-require_once 'vendor/autoload.php';
-use Spipu\Html2Pdf\Html2Pdf;
+session_start();
 
-if (!empty($_POST['nom'])) {
-    $nom = htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $email = htmlspecialchars($_POST['email']);
-    $reseauSocial = htmlspecialchars($_POST['reseauSocial']);
-    $centreInteret = htmlspecialchars($_POST['centreInteret']);
-    $engagement = htmlspecialchars($_POST['engagement']);
-    $duree = htmlspecialchars($_POST['duree']);
-
-    $html2pdf = new Html2Pdf('P', 'A4', 'fr');
-
-    $html = "
-    <page>
-        <page_header> Mon CV : </page_header>
-        <br />
-        Je m'appelle $prenom $nom et mon adresse mail est $email. Je suis inscrit(e) sur $reseauSocial et mon centre
-        d'intérêt est $centreInteret. Je souhaite un engagement en $engagement pour une durée de $duree.
-    </page>
-    ";
-
-    $html2pdf->writeHTML($html);
-    $html2pdf->output('mon_cv.pdf');
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['id'])) {
+    // Rediriger vers la page de connexion
+    header("Location: connexion.html");
+    exit();
 }
+
+// L'utilisateur est connecté, continuer avec la génération du PDF
+
+require_once 'dompdf/autoload.inc.php';
+use Dompdf\Dompdf;
+
+$dompdf = new Dompdf();
+
+ob_start();
+require_once 'confirmationreferent.php';
+$htmlContent = ob_get_clean();
+
+// Supprimer les parties indésirables du contenu HTML
+$htmlContent = preg_replace('/<p> J\'ajoute un <a href="referent.html"> référent.<\/a> <\/p>/', '', $htmlContent);
+$htmlContent = preg_replace('/<p> Je génère mon CV en <a href="pdf.php"> pdf.<\/a> <\/p>/', '', $htmlContent);
+$htmlContent = preg_replace('/<button type="button" onclick="window.location.href=\'logout.php\'">\s*Se déconnecter\s*<\/button>/', '', $htmlContent);
+
+// Charger le CSS depuis le fichier style-confirmation-referent.css
+$cssContent = file_get_contents('style-confirmation-referent.css');
+//$htmlContent = '<style>' . $cssContent . '</style>' . $htmlContent;
+
+$dompdf->loadHtml($htmlContent);
+$dompdf->setPaper('A4', 'portrait');
+$dompdf->render();
+
+$dompdf->stream('Mon CV', array('Attachment' => 0));
 ?>
+
 
