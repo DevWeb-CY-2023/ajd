@@ -9,9 +9,9 @@ Ce projet github contient le code source du site internet du projet dans son ent
 
 ###Comment l'utiliser
 
-Si vous voulez utiliser Jeunes 6.4, il suffit d'avoir un serveur, et d'ouvrir main.html sur ce serveur. Depuis cette page, vou pouvez:
+Si vous voulez utiliser Jeunes 6.4, il suffit d'avoir un serveur, et d'ouvrir main.html sur ce serveur. Depuis cette page, vous pouvez:
 - Vous connecter à votre compte jeune
 - Consulter votre compte jeune
 - Faire une demande de référent
-- Contacter et envoyer des références au consultants
+- Contacter et envoyer des références au consultant
 - Valider des demandes de référent en tant que référent
